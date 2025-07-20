@@ -78,8 +78,8 @@ document.getElementById('generatePDF').addEventListener('click', async function(
         });
 
         const [logoData, qrData] = await Promise.all([
-            loadImage('assets/logo.png').catch((err) => { throw new Error(err.message); }),
-            loadImage('assets/qr.png').catch((err) => { throw new Error(err.message); })
+            loadImage('logo.png').catch((err) => { throw new Error(err.message); }),
+            loadImage('qr.png').catch((err) => { throw new Error(err.message); })
         ]);
 
         // Divide page into 2x2 grid (A4 landscape: 841.89pt x 595.28pt)
