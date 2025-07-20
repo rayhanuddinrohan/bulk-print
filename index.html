@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include jsPDF library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Receipt Generator</h1>
+        <!-- Store Details Form -->
+        <h2>Shipped from FAYA</h2>
+        <div id="storeForm">
+            <label for="storeContacts">FAYA Contacts:</label>
+            <input type="text" id="storeContacts" placeholder="Email or Phone" required>
+        </div>
+
+        <!-- Customer Details Form -->
+        <h2>Customer Details</h2>
+        <div id="customerForms">
+            <div class="customer-form" data-index="0">
+                <h3>Customer 1</h3>
+                <label for="customerName0">Customer Name:</label>
+                <input type="text" id="customerName0" required>
+                <label for="customerContacts0">Contacts:</label>
+                <input type="text" id="customerContacts0" placeholder="Email or Phone">
+                <label for="constID0">Const ID:</label>
+                <input type="text" id="constID0">
+                <label for="customerAddress0">Address:</label>
+                <textarea id="customerAddress0"></textarea>
+                <label for="collectableAmount0">Collectable Amount:</label>
+                <input type="text" id="collectableAmount0" placeholder="$100.00">
+            </div>
+        </div>
+        <button id="addCustomer" type="button">+ Add Customer</button>
+        <button id="generatePDF" type="button">Generate PDF</button>
+        <div id="pdfPreview" style="display: none; margin-top: 20px;">
+            <h3>PDF Preview</h3>
+            <iframe id="pdfIframe" style="width: 100%; height: 500px; border: 1px solid #ccc;"></iframe>
+            <button id="downloadPDF" style="margin-top: 10px;">Download PDF</button>
+        </div>
+        <p>After generating, the PDF will display above, and you can download it using the button.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
